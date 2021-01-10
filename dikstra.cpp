@@ -19,7 +19,7 @@ int getNearestNode(int dist[] , bool visited[]){
 void display(int dist[] , int displayNode[] ){
    for(int i =0 ;i < numOfVertices;i++){
        // stupid structured matrix gaming
-       int temp = displayNode[i] ; 
+       int temp = displayNode[i]; 
        cout<<i << " <- " ;
        while(temp!=-1)
        {
@@ -62,9 +62,11 @@ void dijkstra(int startVertex ){
 int main(void) { 
     cout<<"Enter number of Vertices in the graph : " ; 
     cin>>numOfVertices ; 
-    cout<<"Enter Adjacency Matrix matrix : \n" ; 
+    cout<<"Enter Adjacency matrix : \n" ; 
     for(int i = 0 ;i < numOfVertices ; i++){
-        for(int j = 0 ; j< numOfVertices ; j++)cin>>adjacencyMatrix[i][j] ; 
+        for(int j = 0 ; j< numOfVertices ; j++) {
+            cin>>adjacencyMatrix[i][j] ;
+        } 
     }
     int startVertex ; 
     cout<<"\nEnter source : " ;  cin>>startVertex ;
