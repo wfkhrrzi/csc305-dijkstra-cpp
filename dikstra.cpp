@@ -3,6 +3,7 @@
 using namespace std ;
 
 int adjacencyMatrix[100][100] , numOfVertices  ;  //declaration of graph array and number of vertices set
+char huruf[9] = {'A', 'B' , 'C', 'D' , 'E', 'F'};
 
 int getNearestNode(int dist[] , bool visited[]){
     int key = 0 ; 
@@ -17,19 +18,27 @@ int getNearestNode(int dist[] , bool visited[]){
 }
 
 void display(int dist[] , int displayNode[] ){
-   for(int i =0 ;i < numOfVertices;i++){
+    for(int i =0 ;i < numOfVertices;i++){
        // stupid structured matrix gaming
+		cout<<"        ";
        int temp = displayNode[i]; 
-       cout<<i << " <- " ;
+       cout<< i << "<-";
        while(temp!=-1)
        {
            cout<< temp << " <- " ;
            temp = displayNode[temp] ; 
+           
        }
+       
        cout<<endl; 
-       cout<<"::::Distance = " << dist[i] ; 
+       cout<<"||||>    Distance = " << dist[i] ;
+	   cout<<"   <||||" ;
        cout<<endl; 
    } 
+   cout<<"\n\nNode reference : \n";
+   for(int x = 0 ; x < numOfVertices; x++){
+   	cout<< x << " => " << huruf[x] <<endl ;
+   }
 }
 
 
